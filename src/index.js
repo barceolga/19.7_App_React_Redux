@@ -6,21 +6,17 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducers.js';
+import DevTools from './DevTools';
 import {
-  ADD_COMMENT,
-  REMOVE_COMMENT,
-  EDIT_COMMENT,
-  THUMB_UP_COMMENT,
-  THUMB_DOWN_COMMENT,
   addComment,
-  removeComment,
-  editComment,
   thumbUpComment,
   thumbDownComment
+  /*removeComment,
+  editComment,*/
 } from './actions';
 
 
-const store = createStore(reducer);
+const store = createStore(reducer, DevTools.instrument());
 
 ReactDOM.render(
   <Provider store={store}>
@@ -31,4 +27,7 @@ ReactDOM.render(
 registerServiceWorker();
 
 store.dispatch(addComment('first comment'));
-store.dispatch(addComment('second comments'));
+store.dispatch(addComment('second comment'));
+//store.dispatch(thumbUpComment());
+export {thumbUpComment};
+export {thumbDownComment};

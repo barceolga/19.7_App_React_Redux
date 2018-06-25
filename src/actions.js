@@ -17,31 +17,31 @@ export function addComment(text) {
   };
 }
 
-export function removeComment(id) {
+export function removeComment(commentId) {
   return {
     type: REMOVE_COMMENT,
-    id
+    id: commentId
   };
 }
 
-export function editComment(id, text) {
+export function editComment(commentId, commentText) {
   return {
     type: EDIT_COMMENT,
-    text,
-    id
+    text: commentText,
+    id: commentId
   };
 }
 
-export function thumbUpComment(id, votes) {
+export function thumbUpComment(commentId) {
   return {
     type: THUMB_UP_COMMENT,
-    id
+    id: commentId
   };
 }
 
-export function thumbDownComment(id, votes) {
+export function thumbDownComment(commentId) {
   return {
     type: THUMB_DOWN_COMMENT,
-    id
+    id: commentId
   };
 }

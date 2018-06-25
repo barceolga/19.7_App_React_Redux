@@ -22,10 +22,10 @@ export default function comments (state = [], action) {
                   , ...state];
 
     case REMOVE_COMMENT:
-        return  state.comments.filter(comment => comment.id !== action.id);
+        return  state.filter(comment => comment.id !== action.id);
 
     case EDIT_COMMENT:
-        const editedComments =  state.comments.map(comment => {
+        const editedComments =  state.map(comment => {
             if(comment.id === action.id) {
                 comment.text = action.text;
             }
@@ -34,18 +34,18 @@ export default function comments (state = [], action) {
         return editedComments;
 
     case THUMB_UP_COMMENT:
-        const upvotedComments = state.comments.map(comment => {
-            if(comment.id === action.id) {
-             comment.votes++;
-            }
-              return comment;
-        });
-        return upvotedComments;
+    const upvotedComments = state.map(comment => {
+        if(comment.id === action.id) {
+         return {...comment, votes: comment.votes +1};
+        }
+          return comment;
+    });
+    return upvotedComments;
 
     case THUMB_DOWN_COMMENT:
-        const downvotedComments = state.comments.map(comment => {
+        const downvotedComments = state.map(comment => {
             if(comment.id === action.id) {
-             comment.votes--;
+             return {...comment, votes: comment.votes -1};
             }
               return comment;
         });

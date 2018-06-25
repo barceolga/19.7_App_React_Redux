@@ -10,9 +10,9 @@ import DevTools from './DevTools';
 import {
   addComment,
   thumbUpComment,
-  thumbDownComment
-  /*removeComment,
-  editComment,*/
+  thumbDownComment,
+  removeComment,
+    /*editComment,*/
 } from './actions';
 
 
@@ -28,6 +28,7 @@ registerServiceWorker();
 
 store.dispatch(addComment('first comment'));
 store.dispatch(addComment('second comment'));
-//store.dispatch(thumbUpComment());
+
 export {thumbUpComment};
 export {thumbDownComment};
+export {removeComment};

@@ -1,34 +1,23 @@
 import React from 'react';
-import { LocalForm, Control, actions } from 'react-redux-form';
+import { reduxForm, Field} from 'redux-form';
 import {addComment} from './index.js';
 
- export default class CommentForm extends React.Component {
-  handleChange(values) {
+let CommentForm = props => {
+  const { handleSubmit } = props;
+  return <form onSubmit={handleSubmit} className="form">
+      <div className="field">
+        <label className="label">Comment field</label>
+        <Field className="textearea" name="commentField" component="textarea" rows="7" cols="70" />
+      </div>
+      <div className="field">
+        <div className="control">
+          <button className="commentButton" type="submit">Add comment</button>
+        </div>
+      </div>
+    </form>
+};
+CommentForm = reduxForm({
+  form: 'commentForm'
+})(CommentForm);
 
-  }
-
-  handleSubmit(values) {
-    this.props.addComment({
-      values: this.props.values
-    })
-  }
-  /*attachDispatch(dispatch) {
-    this.formDispatch = dispatch;
-  }
-  changeTextToFormText() {
-    this.formDispatch(actions.change('comment.text', model.value));
-  }*/
-  render() {
-    return (
-      <LocalForm
-       model="comment"
-      // getDispatch{(dispatch) => this.attach(dispatch)}
-      // initialState={{text: ''}}
-       onChange={(values) => this.handleChange(values)}
-       onSubmit={(values) => this.handleSubmit(values)}
-       >
-         <Control.text model=".comment" />
-     </LocalForm>
-   );
-  }
-}
+export default CommentForm;

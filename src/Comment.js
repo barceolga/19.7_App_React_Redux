@@ -1,7 +1,7 @@
 import React from 'react';
-import {thumbUpComment} from './index.js';
-import {thumbDownComment} from './index.js';
-import {removeComment} from './index.js';
+import {thumbUpComment} from './actions.js';
+import {thumbDownComment} from './actions.js';
+import {removeComment} from './actions.js';
 //import {addComment} from './index.js';
 
 const Comment = ({text, votes, id, thumbUpComment, thumbDownComment, removeComment}) =>

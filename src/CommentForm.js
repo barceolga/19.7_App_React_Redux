@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import CommentsList from './CommentsList';
 import Comment from './Comment.js';
 import {addComment} from './actions.js';
-
+import  './CommentForm.css';
 const mapDispatchToProps = (dispatch) => {
   return {
     addComment: text =>dispatch(addComment(text)),
@@ -37,7 +37,7 @@ class CommentForm extends Component {
   render() {
     const text = this.state.name;
     return (
-      <form onSubmit ={this.handleSubmit}>
+      <form onSubmit ={this.handleSubmit} className="form">
           <div className="form-grooup">
               <textarea
                 rows="7"
@@ -46,7 +46,7 @@ class CommentForm extends Component {
                 onChange={this.handleChange}
               />
         </div>
-            <button type="submit">Add comment</button>
+            <button type="submit" className="form-button">Add comment</button>
         </form>
     )
   }

@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+}
+
+.Comment-item {
+  font-size: 16px;
+  font weight: 500px;
+  font-family: monospace;
+  padding: 8px;
+  color: navy;
+  margin-right: 10px;
+}
+
+.Comment-item  span{
+  font-size: 16px;
+  font weight: 500px;
+  padding: 8px;
+  color: #cc0000;
+  border: 1.6px solid #cc0000;
+  margin-left: 10px;
+  background-color: #a3c2c2;
+}
+.Comment-group {
+  margin-top: 25px;
+}
+.Comment-group_button {
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ffd699;
+  color: navy;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: monospace;
+  margin: 5px;
+}

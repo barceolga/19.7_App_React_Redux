@@ -4,6 +4,7 @@ import CommentsList from './CommentsList';
 import Comment from './Comment.js';
 import {addComment} from './actions.js';
 import  './CommentForm.css';
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addComment: text =>dispatch(addComment(text)),
@@ -11,7 +12,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = state => ({
-  comments: [...state.comments, mapDispatchToProps]
+  comments: state.comments,
+  form: state.form
 });
 
 class CommentForm extends Component {
@@ -24,27 +26,33 @@ class CommentForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event){
-    this.setState({name: event.target.value});
+    console.log(event.target)
+    this.setState({text: event.target.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const text = this.state.name;
-    this.props.addComment( text );
+    this.props.addComment( this.state.text );
     this.setState({ text: ""});
   }
-
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      text: nextProps.form.text,
+      id: nextProps.form.id
+    })
+  }
+  componentDidUpdate() {
+    console.log(this.state);
+  }
   render() {
-    const text = this.state.name;
     return (
       <form onSubmit ={this.handleSubmit} className="form">
           <div className="form-grooup">
               <textarea
                 rows="7"
                 cols="70"
-                value = {this.state.name}
                 onChange={this.handleChange}
-              />
+              >{this.state.text}</textarea>
         </div>
             <button type="submit" className="form-button">Add comment</button>
         </form>

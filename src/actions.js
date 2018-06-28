@@ -7,6 +7,7 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const EDIT_COMMENT = 'EDIT_COMMENT';
 export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
 export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
+export const UPDATE_COMMENT = 'UPDATE_COMMENT';
 
 
 export function addComment(text) {
@@ -27,6 +28,14 @@ export function removeComment(commentId) {
 export function editComment(commentId, commentText) {
   return {
     type: EDIT_COMMENT,
+    text: commentText,
+    id: commentId
+  };
+}
+
+export function updateComment(commentId, commentText) {
+  return {
+    type: UPDATE_COMMENT,
     text: commentText,
     id: commentId
   };

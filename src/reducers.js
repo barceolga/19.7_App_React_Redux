@@ -4,7 +4,7 @@
 
 import {combineReducers} from 'redux';
 import comments from './comments.js';
-import { reducer as formReducer} from 'redux-form';
+import  formReducer from './formReducer.js';
 import users from './users.js';
 
 // Main Reducer

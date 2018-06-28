@@ -8,7 +8,7 @@
 }
 
 .form .form-grooup {
-    background-color: beige;
+    background-color: #ccffff;
     color: navy;
     font-size: 16px;
     font-weight: normal;
@@ -19,9 +19,16 @@
     padding: 8px;
     border-radius: 5px;
     text-align: center;
-    background-color: orange;
+    background-color: #ffd699;
     color: navy;
     font-size: 16px;
     font-weight: normal;
     font-family: monospace;
+    transition: 1s linear;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #4d4dff;
+    color: #ffd699;
 }

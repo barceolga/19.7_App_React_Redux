@@ -11,9 +11,14 @@ import {
   REMOVE_COMMENT,
   EDIT_COMMENT,
   THUMB_UP_COMMENT,
-  THUMB_DOWN_COMMENT,
-  addComment
+  THUMB_DOWN_COMMENT
 } from './actions';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fab, faThumbsUp, faThumbsDown)
 
 
 const store = createStore(rootReducer);

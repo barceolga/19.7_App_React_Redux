@@ -16,13 +16,15 @@
 
 .App-title {
   font-size: 1.5em;
+  font-weight: 700;
+  font-family: fantasy;
+  color: navy;
+  text-transform: uppercase;
 }
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  font-weight: 600;
+  font-family: fantasy;
+  color: blue;
 }

@@ -7,6 +7,7 @@ import {
   EDIT_COMMENT,
   THUMB_UP_COMMENT,
   THUMB_DOWN_COMMENT,
+  UPDATE_COMMENT
 } from './actions';
 
 // Creating a reducer for administrating comments' state
@@ -50,6 +51,8 @@ export default function comments (state = [], action) {
               return comment;
         });
         return downvotedComments;
+    case UPDATE_COMMENT:
+        
 
     default:
         return state;

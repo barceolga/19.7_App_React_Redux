@@ -1,16 +1,23 @@
 import React from 'react';
-import {thumbUpComment} from './actions.js';
-import {thumbDownComment} from './actions.js';
-import {removeComment} from './actions.js';
-//import {addComment} from './index.js';
+import './Comment.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Comment = ({text, votes, id, thumbUpComment, thumbDownComment, removeComment}) =>
-<li>
+const Comment = ({
+  text,
+  votes,
+  id,
+  thumbUpComment,
+  thumbDownComment,
+  removeComment,
+  updateComment
+}) =>
+<li className="Comment-item">
     {text} <span>votes: {votes}</span>
-    <div>
-        <button onClick={() => thumbUpComment(id)}>Thumb up</button>
-        <button onClick={() => thumbDownComment(id)}>Thumb down</button>
-        <button onClick={() => removeComment(id)}>Delete</button>
+    <div className="Comment-group">
+        <button className="Comment-group_button" onClick={() => thumbUpComment(id)}><FontAwesomeIcon icon="thumbs-up" /></button>
+        <button className="Comment-group_button" onClick={() => thumbDownComment(id)}><FontAwesomeIcon icon="thumbs-down"  /></button>
+        <button className="Comment-group_button" onClick={() => removeComment(id)}>Delete</button>
+        <button className="Comment-group_button" onClick={() => updateComment(id, text)}>Update</button>
     </div>
 </li>;
 

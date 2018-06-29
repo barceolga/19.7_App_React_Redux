@@ -6,8 +6,7 @@ import {
   REMOVE_COMMENT,
   EDIT_COMMENT,
   THUMB_UP_COMMENT,
-  THUMB_DOWN_COMMENT,
-  UPDATE_COMMENT
+  THUMB_DOWN_COMMENT
 } from './actions';
 
 // Creating a reducer for administrating comments' state
@@ -26,13 +25,9 @@ export default function comments (state = [], action) {
         return  state.filter(comment => comment.id !== action.id);
 
     case EDIT_COMMENT:
-        const editedComments =  state.map(comment => {
-            if(comment.id === action.id) {
-                return {...comment, text: action.text}
-            }
-              return comment;
-        });
-        return editedComments;
+        /*let filteredComments = state.filter(comment => comment.id !== action.id);*/
+        const editedComment = state.find(comment=> comment.id === action.id);
+        return [...state, editedComment];
 
     case THUMB_UP_COMMENT:
     const upvotedComments = state.map(comment => {
@@ -51,8 +46,6 @@ export default function comments (state = [], action) {
               return comment;
         });
         return downvotedComments;
-    case UPDATE_COMMENT:
-
 
     default:
         return state;

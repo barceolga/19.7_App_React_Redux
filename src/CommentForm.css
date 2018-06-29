@@ -16,6 +16,7 @@
 }
 
 .form .form-button{
+    margin: 10px;
     padding: 8px;
     border-radius: 5px;
     text-align: center;

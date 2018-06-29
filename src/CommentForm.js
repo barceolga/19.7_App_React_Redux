@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import CommentsList from './CommentsList';
 import Comment from './Comment.js';
-import {addComment} from './actions.js';
+import {
+  addComment,
+  editComment
+} from './actions.js';
 import  './CommentForm.css';
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addComment: text =>dispatch(addComment(text)),
+    editComment: (id, text) =>dispatch(editComment(id, text))
   }
 };
 
@@ -41,6 +45,23 @@ class CommentForm extends Component {
       id: nextProps.form.id
     })
   }
+  handleEdit(event) {
+    if(!this.state.id) {
+      return
+    }
+      event.preventDefault();
+     this.props.editComment(
+        {text: this.state.text}
+     );
+  }
+
+  switchToAddMode(event){
+    this.setState({
+      text: ''
+    })
+    event.preventDefault();
+  }
+
   componentDidUpdate() {
     console.log(this.state);
   }
@@ -51,10 +72,21 @@ class CommentForm extends Component {
               <textarea
                 rows="7"
                 cols="70"
+                value={this.state.text}
                 onChange={this.handleChange}
-              >{this.state.text}</textarea>
+              />
         </div>
+         <div>
             <button type="submit" className="form-button">Add comment</button>
+            <button
+              className="form-button"
+              onClick={this.handleEdit.bind(this)}
+              > Edit comment </button>
+              <button
+                className="form-button"
+                onClick={this.switchToAddMode.bind(this)}
+                > Clear </button>
+        </div>
         </form>
     )
   }

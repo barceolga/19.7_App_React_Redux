@@ -28,7 +28,7 @@ export default function comments (state = [], action) {
     case EDIT_COMMENT:
         const editedComments =  state.map(comment => {
             if(comment.id === action.id) {
-                comment.text = action.text;
+                return {...comment, text: action.text}
             }
               return comment;
         });
@@ -52,7 +52,7 @@ export default function comments (state = [], action) {
         });
         return downvotedComments;
     case UPDATE_COMMENT:
-        
+
 
     default:
         return state;

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import CommentsList from './CommentsList';
-import Comment from './Comment.js';
 import {
   addComment,
   editComment
@@ -30,7 +28,6 @@ class CommentForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event){
-    console.log(event.target)
     this.setState({text: event.target.value});
   }
 
@@ -39,12 +36,14 @@ class CommentForm extends Component {
     this.props.addComment( this.state.text );
     this.setState({ text: ""});
   }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       text: nextProps.form.text,
       id: nextProps.form.id
     })
   }
+
   handleEdit(event) {
     if(!this.state.id) {
       return
@@ -62,9 +61,6 @@ class CommentForm extends Component {
     event.preventDefault();
   }
 
-  componentDidUpdate() {
-    console.log(this.state);
-  }
   render() {
     return (
       <form onSubmit ={this.handleSubmit} className="form">

@@ -12,7 +12,7 @@ const Comment = ({
   updateComment
 }) =>
 <li className="Comment-item">
-    {text} <span>votes: {votes}</span>
+    {text} <p>votes: <span>{votes}</span></p>
     <div className="Comment-group">
         <button className="Comment-group_button" onClick={() => thumbUpComment(id)}><FontAwesomeIcon icon="thumbs-up" /></button>
         <button className="Comment-group_button" onClick={() => thumbDownComment(id)}><FontAwesomeIcon icon="thumbs-down"  /></button>

@@ -2,10 +2,8 @@
 /*jshint esversion: 6*/
 // Importing the necessary action's types:
 import {
-  UPDATE_COMMENT,
-  EDIT_COMMENT
+  UPDATE_COMMENT
 } from './actions';
-import comments from './comments.js'
 // Creating a reducer for administrating form's state
 
 export default function formReducer (state = {id: "", text: ""}, action) {

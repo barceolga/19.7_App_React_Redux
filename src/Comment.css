@@ -9,19 +9,27 @@
   padding: 8px;
   color: navy;
   margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.Comment-item  span{
+.Comment-item  p {
+  width: 150px;
   font-size: 16px;
-  font weight: 500px;
+  font-weight: 500;
   padding: 8px;
-  color: #cc0000;
-  border: 1.6px solid #cc0000;
-  margin-left: 10px;
-  background-color: #a3c2c2;
+  color: #ffd699;
+  border: 4.8px solid #ffd699;
+  background-color: navy;
+}
+.Comment-item  span {
+  color: #d9b3ff;
+  font-weight: 900;
 }
 .Comment-group {
-  margin-top: 25px;
+  margin-top: 5px;
 }
 .Comment-group_button {
   padding: 8px;

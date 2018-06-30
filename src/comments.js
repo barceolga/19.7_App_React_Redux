@@ -12,40 +12,44 @@ import {
 // Creating a reducer for administrating comments' state
 
 export default function comments (state = [], action) {
+
     switch(action.type) {
       case ADD_COMMENT:
-          return  [{
-                  id: action.id,
-                  text: action.text,
-                  votes: 0
-                  }
-                  , ...state];
+              return  [{
+                    id: action.id,
+                    text: action.text,
+                    votes: 0
+                    }
+                    , ...state];
 
     case REMOVE_COMMENT:
-        return  state.filter(comment => comment.id !== action.id);
+              return  state.filter(comment => comment.id !== action.id);
 
     case EDIT_COMMENT:
-        /*let filteredComments = state.filter(comment => comment.id !== action.id);*/
-        const editedComment = state.find(comment=> comment.id === action.id);
-        return [...state, editedComment];
-
+             const editedComments = state.map(comment => {
+                 if( comment.id===action.id && comment.text !== action.text) {
+                 return {...comment, text: action.text};
+                 }
+                 return comment;
+             });
+             return editedComments;
     case THUMB_UP_COMMENT:
-    const upvotedComments = state.map(comment => {
-        if(comment.id === action.id) {
-         return {...comment, votes: comment.votes +1};
-        }
-          return comment;
-    });
-    return upvotedComments;
+              const upvotedComments = state.map(comment => {
+                  if(comment.id === action.id) {
+                   return {...comment, votes: comment.votes +1};
+                  }
+                    return comment;
+              });
+              return upvotedComments;
 
     case THUMB_DOWN_COMMENT:
-        const downvotedComments = state.map(comment => {
-            if(comment.id === action.id) {
-             return {...comment, votes: comment.votes -1};
-            }
-              return comment;
-        });
-        return downvotedComments;
+              const downvotedComments = state.map(comment => {
+                  if(comment.id === action.id) {
+                   return {...comment, votes: comment.votes -1};
+                  }
+                    return comment;
+              });
+              return downvotedComments;
 
     default:
         return state;

@@ -50,8 +50,8 @@ class CommentForm extends Component {
     }
       event.preventDefault();
      this.props.editComment(
-        {text: this.state.text}
-     );
+            this.state.id, this.state.text
+      );
   }
 
   switchToAddMode(event){

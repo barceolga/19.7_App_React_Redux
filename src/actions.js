@@ -13,8 +13,8 @@ export const UPDATE_COMMENT = 'UPDATE_COMMENT';
 export function addComment(text) {
   return {
     type: ADD_COMMENT,
-    text: text,
-    id: uuid.v4()
+    id: uuid.v4(),
+    text: text
   };
 }
 
@@ -28,16 +28,16 @@ export function removeComment(commentId) {
 export function editComment(commentId, commentText) {
   return {
     type: EDIT_COMMENT,
-    text: commentText,
-    id: commentId
+    id: commentId,
+    text: commentText
   };
 }
 
 export function updateComment(commentId, commentText) {
   return {
     type: UPDATE_COMMENT,
-    text: commentText,
-    id: commentId
+    id: commentId,
+    text: commentText
   };
 }
 

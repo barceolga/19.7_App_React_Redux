@@ -79,7 +79,7 @@ class CommentForm extends Component {
               onClick={this.handleEdit.bind(this)}
               > Edit comment </button>
               <button
-                className="form-button"
+                className="form-button_negative"
                 onClick={this.switchToAddMode.bind(this)}
                 > Clear </button>
         </div>

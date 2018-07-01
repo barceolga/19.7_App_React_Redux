@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentsListContainer from './CommentsListContainer';
 import ContainerForm from './CommentForm';
+import DevTools from './DevTools.js';
 import './App.css';
 
   const App= () => {
@@ -11,6 +12,7 @@ import './App.css';
           <ContainerForm/>
           <h2 className="App-intro"> The comments list</h2>
           <CommentsListContainer/>
+          <DevTools />
       </div>
     );
   };

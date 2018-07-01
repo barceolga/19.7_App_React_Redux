@@ -9,10 +9,10 @@ import rootReducer from './reducers.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsUp, faThumbsDown, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import DevTools from './DevTools';
 
-library.add(fab, faThumbsUp, faThumbsDown)
+library.add(fab, faThumbsUp, faThumbsDown, faEdit, faTrash)
 
 
 const store = createStore(rootReducer, /*DevTools.instrument()*/);

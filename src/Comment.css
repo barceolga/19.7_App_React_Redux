@@ -8,19 +8,19 @@
   align-items: center;
   justify-content: center;
 }
+.Comment-item_common {
+  background-color: #FFE5BE;
+  border: 3px solid navy;
+  padding: 10px;
+}
 .Comment-item_paragraph {
   font-size: 18px;
   font weight: 500px;
   font-family: monospace;
   padding: 9px;
   color: navy;
-  background-color: #FFE5BE;
-  border: 3px solid navy;
 }
-.Comment-item div {
-  display: flex;
-  flex-direction: row;
-}
+
 .Comment-item div .evaluation {
   display: flex;
   flex-direction: row;
@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
+  width: 45px;
   height: 30px;
   border: 3px solid #ffd699;
   background-color: #9AB1CA;
@@ -53,7 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
+  width: 45px;
   height: 30px;
   padding: 4px;
   color: #ff0000;

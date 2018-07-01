@@ -3,42 +3,101 @@
 }
 
 .Comment-item {
-  font-size: 16px;
-  font weight: 500px;
-  font-family: monospace;
-  padding: 8px;
-  color: navy;
-  margin-right: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.Comment-item_paragraph {
+  font-size: 18px;
+  font weight: 500px;
+  font-family: monospace;
+  padding: 9px;
+  color: navy;
+  background-color: #FFE5BE;
+  border: 3px solid navy;
+}
+.Comment-item div {
+  display: flex;
+  flex-direction: row;
+}
+.Comment-item div .evaluation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.Comment-item  .evaluation-positive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  border: 3px solid #ffd699;
+  background-color: #9AB1CA;
+  padding: 4px;
+}
 
-.Comment-item  p {
-  width: 150px;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 8px;
-  color: #ffd699;
-  border: 4.8px solid #ffd699;
+.Comment-item  .evaluation-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 30px;
+  padding: 4px;
+  border: 3px solid #ffd699;
   background-color: navy;
 }
-.Comment-item  span {
+
+.Comment-item  .evaluation-negative {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  padding: 4px;
+  color: #ff0000;
+  border: 3px solid #ffd699;
+  background-color: #FFD4BE;
+  text-align: center;
+}
+
+.Comment-item  .positive {
+  color: navy;
+  font-size: 12px;
+  font-weight: 900;
+}
+.Comment-item  .total {
   color: #d9b3ff;
+  font-size: 12px;
+  font-weight: 900;
+}
+.Comment-item  .negative {
+  color: #ff0000;
+  font-size: 12px;
   font-weight: 900;
 }
 .Comment-group {
-  margin-top: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: monospace;
+
 }
 .Comment-group_button {
-  padding: 8px;
+
   border-radius: 5px;
   text-align: center;
   background-color: #ffd699;
   color: navy;
-  font-size: 16px;
-  font-weight: normal;
-  font-family: monospace;
+  padding: 8px;
+  margin: 5px;
+}
+
+.Comment-group_button_negative {
+  border-radius: 5px;
+  text-align: center;
+  color: #ff0000;
+  background-color: #FFD4BE;
+  padding: 8px;
   margin: 5px;
 }

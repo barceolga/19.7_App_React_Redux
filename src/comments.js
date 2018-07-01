@@ -15,19 +15,23 @@ export default function comments (state = [], action) {
 
     switch(action.type) {
       case ADD_COMMENT:
-              return  [{
-                    id: action.id,
-                    text: action.text,
-                    votes: 0
-                    }
-                    , ...state];
+              if (action.text!=="") {
+                return  [{
+                      id: action.id,
+                      text: action.text,
+                      positive: 0,
+                      negative: 0,
+                      votes:0
+                      }
+                      , ...state];
+              }
 
     case REMOVE_COMMENT:
               return  state.filter(comment => comment.id !== action.id);
 
     case EDIT_COMMENT:
              const editedComments = state.map(comment => {
-                 if( comment.id===action.id && comment.text !== action.text) {
+                 if( comment.id===action.id && comment.text !== action.text && action.text!=="") {
                  return {...comment, text: action.text};
                  }
                  return comment;
@@ -36,7 +40,7 @@ export default function comments (state = [], action) {
     case THUMB_UP_COMMENT:
               const upvotedComments = state.map(comment => {
                   if(comment.id === action.id) {
-                   return {...comment, votes: comment.votes +1};
+                   return {...comment, positive: comment.positive +1, votes: comment.votes +1};
                   }
                     return comment;
               });
@@ -45,7 +49,7 @@ export default function comments (state = [], action) {
     case THUMB_DOWN_COMMENT:
               const downvotedComments = state.map(comment => {
                   if(comment.id === action.id) {
-                   return {...comment, votes: comment.votes -1};
+                   return {...comment, negative: comment.negative -1, votes: comment.votes -1};
                   }
                     return comment;
               });

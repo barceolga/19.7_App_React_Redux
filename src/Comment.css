@@ -19,7 +19,8 @@
   font weight: 500px;
   font-family: monospace;
   padding: 9px;
-  color: navy;
+  color:
+#0000cc;
   text-align: justify;
 }
 
@@ -55,6 +56,9 @@
 }
 
 .Comment-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   font-size: 12px;
   font-weight: normal;
   font-family: monospace;
@@ -67,14 +71,13 @@
   background-color: #ffd699;
   color: navy;
   padding: 8px;
-  margin: 5px;
 }
 
 .Comment-group_button_negative {
   border-radius: 5px;
   text-align: center;
   color: #ff0000;
-  background-color: #FFD4BE;
+  background-color: #ffd699;
   padding: 8px;
-  margin: 5px;
+
 }

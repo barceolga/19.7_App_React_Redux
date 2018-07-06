@@ -12,7 +12,7 @@
   background-color: #FFE5BE;
   border: 3px solid navy;
   padding: 10px;
-  min-width: 33%;
+  width: 33%;
 }
 .Comment-item_paragraph {
   font-size: 16px;

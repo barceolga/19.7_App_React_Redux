@@ -8,6 +8,7 @@ const Comment = ({
   negative,
   votes,
   id,
+  style,
   thumbUpComment,
   thumbDownComment,
   removeComment,
@@ -16,12 +17,11 @@ const Comment = ({
  return (
       <li className="Comment-item">
           <div className="Comment-item_common">
-              <p className="Comment-item_paragraph">{text}</p>
               <div className="evaluation">
-                  <div className="evaluation-positive"> <span className="positive">{positive}</span></div>
-                  <div className="evaluation-total"><span className="total">Sum: {votes}</span></div>
-                  <div className="evaluation-negative"><span className="negative">{negative}</span></div>
+                  <div className="evaluation-total">Votes:<span style={style} className={`total ${votes>=0?'positive':'negative'}`}> {votes}</span></div>
               </div>
+              <p className="Comment-item_paragraph">{text}</p>
+
           </div>
           <div className="Comment-group">
                   <button className="Comment-group_button" onClick={() => thumbUpComment(id)}><FontAwesomeIcon icon="thumbs-up" /></button>

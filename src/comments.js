@@ -19,9 +19,7 @@ export default function comments (state = [], action) {
                 return  [{
                       id: action.id,
                       text: action.text,
-                      positive: 0,
-                      negative: 0,
-                      votes:0
+                      votes:0,
                       }
                       , ...state];
               }
@@ -40,7 +38,7 @@ export default function comments (state = [], action) {
     case THUMB_UP_COMMENT:
               const upvotedComments = state.map(comment => {
                   if(comment.id === action.id) {
-                   return {...comment, positive: comment.positive +1, votes: comment.votes +1};
+                   return {...comment,  votes: comment.votes +1};
                   }
                     return comment;
               });
@@ -49,7 +47,7 @@ export default function comments (state = [], action) {
     case THUMB_DOWN_COMMENT:
               const downvotedComments = state.map(comment => {
                   if(comment.id === action.id) {
-                   return {...comment, negative: comment.negative -1, votes: comment.votes -1};
+                   return {...comment, votes: comment.votes -1};
                   }
                     return comment;
               });
